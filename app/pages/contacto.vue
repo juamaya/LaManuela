@@ -1,6 +1,9 @@
 <template>
     <div class="min-h-screen bg-slate-450 flex   justify-center">
-<h1>contacto</h1>
+ 
+
+ <ContactForm />
+
     </div>
 </template>
 
