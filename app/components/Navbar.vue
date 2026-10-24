@@ -17,9 +17,9 @@ const closeMenu = () => {
 </script>
 
 <template>
-  <header class="sticky top-0 z-50 border-b border-amber-900/10 bg-[#F7F0E6]/95 backdrop-blur-md">
+  <header class="fixed top-0 left-0 z-50 w-full border-b bg-amber-100">
     <nav
-      class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8"
+      class=" mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8 "
       aria-label="Navegación principal"
     >
       <!-- Logo -->
