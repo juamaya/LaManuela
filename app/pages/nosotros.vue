@@ -1,10 +1,13 @@
 
 <script setup lang="ts">
+import Avatar from '~/components/Avatar.vue'
+
 useSeoMeta({
   title: 'La Manuela | Sabor de Casa',
   description:
     'Conoce nuestra historia, nuestra cocina casera y dónde encontrarnos.',
 })
+
 
 const business = {
   name: 'Sabor de Casa',
@@ -34,17 +37,18 @@ const directionsUrl = computed(
   <main class="min-h-screen bg-white text-stone-800">
     <!-- Hero -->
     <section class="relative overflow-hidden bg-orange-50">
+    <!-- Avatar -->
+       <Avatar/>
+  <!-- Avatar END -->
+
+  
+
       <div
         class="mx-auto grid max-w-7xl items-center gap-12
                px-6 py-16 md:grid-cols-2 md:py-24"
       >
         <div>
-          <span
-            class="inline-flex rounded-full bg-orange-100 px-4 py-2
-                   text-sm font-semibold text-orange-800"
-          >
-            Nuestra historia
-          </span>
+           
 
           <h1
             class="mt-6 text-4xl font-extrabold tracking-tight
