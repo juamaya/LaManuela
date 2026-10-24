@@ -1,5 +1,5 @@
 
-name: Deploy Nuxt to GitHub Pages
+name: Deploy La Manuela to GitHub Pages
 
 on:
   push:
@@ -10,8 +10,13 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: github-pages
+  cancel-in-progress: true
+
 jobs:
   build:
+    name: Build Nuxt
     runs-on: ubuntu-latest
 
     steps:
@@ -27,17 +32,18 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Generate static site
+      - name: Generate static website
         run: npx nuxt build --preset github_pages
         env:
           NUXT_APP_BASE_URL: /${{ github.event.repository.name }}/
 
-      - name: Upload artifact
+      - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: .output/public
 
   deploy:
+    name: Deploy to GitHub Pages
     needs: build
     runs-on: ubuntu-latest
 
@@ -50,6 +56,6 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
-      - name: Deploy
+      - name: Deploy website
         id: deployment
         uses: actions/deploy-pages@v4
