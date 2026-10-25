@@ -80,7 +80,7 @@ const directionsUrl = computed(
             src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=1200"
             alt="Comida casera recién preparada y servida en la mesa"
             class="h-80 w-full rounded-3xl object-cover shadow-xl
-                   sm:h-[440px]"
+                   sm:h-110"
           />
 
           <div
@@ -264,13 +264,13 @@ const directionsUrl = computed(
           </div>
 
           <!-- Mapa -->
-          <div class="min-h-[350px] lg:col-span-2 lg:min-h-[500px]">
+          <div class="min-h-87.5 lg:col-span-2 lg:min-h-125">
             <iframe
               :src="mapUrl"
               title="Mapa de ubicación de Sabor de Casa"
               width="100%"
               height="100%"
-              class="min-h-[350px] w-full border-0 lg:min-h-[500px]"
+              class="min-h-87.5 w-full border-0 lg:min-h-125"
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
             ></iframe>

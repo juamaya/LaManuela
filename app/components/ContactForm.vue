@@ -57,6 +57,9 @@ async function handleSubmit() {
     loading.value = false
   }
 }
+
+ 
+ 
 </script>
 
 <template>
@@ -250,6 +253,8 @@ async function handleSubmit() {
         <p class="text-center text-xs text-stone-500">
           Te responderemos lo antes posible.
         </p>
+
+        
       </form>
     </div>
   </section>

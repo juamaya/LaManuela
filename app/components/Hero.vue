@@ -95,7 +95,7 @@
         ></div>
 
         <div
-          class="relative aspect-[4/3] overflow-hidden rounded-[2rem] shadow-2xl shadow-[#5A3825]/15 sm:aspect-[5/4] lg:aspect-[4/5]"
+          class="relative aspect-4/3 overflow-hidden rounded-4xl shadow-2xl shadow-[#5A3825]/15 sm:aspect-5/4 lg:aspect-4/5"
         >
           <img
             src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=1200&q=85"
@@ -105,7 +105,7 @@
           />
 
           <div
-            class="absolute inset-0 bg-gradient-to-t from-[#2D1B12]/50 via-transparent to-transparent"
+            class="absolute inset-0 bg-linear-to-t from-[#2D1B12]/50 via-transparent to-transparent"
           ></div>
 
           <div class="absolute bottom-5 left-5 right-5 sm:bottom-7 sm:left-7">
