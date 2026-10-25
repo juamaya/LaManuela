@@ -17,29 +17,34 @@ const closeMenu = () => {
 </script>
 
 <template>
-  <header class="fixed top-0 left-0 z-50 w-full border-b bg-amber-100">
+  <header
+    class="fixed left-0 top-0 z-50 w-full border-b border-amber-900/10 bg-amber-100 shadow-sm"
+  >
     <nav
-      class=" mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8 "
+      class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8"
       aria-label="Navegación principal"
     >
       <!-- Logo -->
       <NuxtLink
         to="/"
-        class="flex items-center gap-3"
-        aria-label="La Taza, inicio"
+        class="group flex items-center gap-3"
+        aria-label="La Manuela, inicio"
         @click="closeMenu"
       >
         <span
-          class="flex h-11 w-11 items-center justify-center rounded-xl bg-[#5A3825] text-xl text-[#F7F0E6]"
+          class="flex h-11 w-11 items-center justify-center rounded-xl bg-[#5A3825] text-xl text-[#F7F0E6] transition duration-300 group-hover:bg-[#754B32] group-hover:rotate-[-6deg]"
           aria-hidden="true"
         >
           ☕
         </span>
 
         <span class="flex flex-col">
-          <span class="text-lg font-extrabold tracking-widest text-[#3D291E]">
+          <span
+            class="text-lg font-extrabold tracking-widest text-[#3D291E] transition-colors duration-300 group-hover:text-[#9A633B]"
+          >
             LA MANUELA
           </span>
+
           <span class="text-[10px] tracking-[0.3em] text-[#876A55]">
             CAFÉ · BAR
           </span>
@@ -49,7 +54,7 @@ const closeMenu = () => {
       <!-- Botón menú móvil -->
       <button
         type="button"
-        class="flex h-11 w-11 items-center justify-center rounded-lg text-[#5A3825] transition hover:bg-[#E9DDCE] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#5A3825] md:hidden"
+        class="flex h-11 w-11 items-center justify-center rounded-lg text-[#5A3825] transition-colors duration-300 hover:bg-[#E9DDCE] active:bg-[#D8C2AB] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#5A3825] md:hidden"
         :aria-expanded="menuOpen"
         aria-controls="main-menu"
         :aria-label="menuOpen ? 'Cerrar menú' : 'Abrir menú'"
@@ -90,20 +95,26 @@ const closeMenu = () => {
         </svg>
       </button>
 
-      <!-- Enlaces -->
+      <!-- Navegación -->
       <ul
         id="main-menu"
-        class="absolute left-0 right-0 top-full flex flex-col gap-1 border-b border-amber-900/10 bg-[#F7F0E6] px-5 py-4 shadow-lg md:static md:flex md:flex-row md:items-center md:gap-8 md:border-0 md:bg-transparent md:p-0 md:shadow-none"
+        class="absolute left-0 right-0 top-full flex-col gap-1 border-b border-amber-900/10 bg-[#F7F0E6] px-5 py-4 shadow-lg md:static md:flex md:flex-row md:items-center md:gap-2 md:border-0 md:bg-transparent md:p-0 md:shadow-none"
         :class="menuOpen ? 'flex' : 'hidden md:flex'"
       >
         <li v-for="link in links" :key="link.to">
           <NuxtLink
             :to="link.to"
-            class="block rounded-lg px-4 py-3 text-sm font-medium text-[#5A3825] transition hover:bg-[#E9DDCE] hover:text-[#9A633B] md:px-0 md:py-2 md:hover:bg-transparent"
-            active-class="!font-bold !text-[#9A633B]"
+            class="group relative block overflow-hidden rounded-lg px-4 py-3 text-sm font-semibold text-[#5A3825] transition-all duration-300 ease-in-out hover:bg-[#E9DDCE] hover:text-[#9A633B] active:scale-[0.98] active:bg-[#D8C2AB] active:text-[#3D291E] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#9A633B] md:px-4 md:py-2"
+            active-class="!bg-[#E9DDCE] !font-bold !text-[#9A633B]"
             @click="closeMenu"
           >
             {{ link.label }}
+
+            <!-- Línea inferior animada -->
+            <span
+              class="absolute bottom-1 left-4 right-4 h-0.5 origin-left scale-x-0 rounded-full bg-[#9A633B] transition-transform duration-300 ease-out group-hover:scale-x-100 group-active:scale-x-100 md:bottom-0.5"
+              aria-hidden="true"
+            />
           </NuxtLink>
         </li>
       </ul>

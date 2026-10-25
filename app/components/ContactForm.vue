@@ -231,13 +231,13 @@ async function handleSubmit() {
         <button
           type="submit"
           :disabled="loading"
-          class="flex w-full items-center justify-center gap-2
+          class="flex w-full items-center justify-center gap-2 cursor-pointer
                  rounded-xl bg-orange-600 px-6 py-3.5
                  font-semibold text-white shadow-sm transition
                  hover:bg-orange-700 focus-visible:outline-none
                  focus-visible:ring-2 focus-visible:ring-orange-500
                  focus-visible:ring-offset-2
-                 disabled:cursor-not-allowed disabled:opacity-60"
+                 disabled:cursor-not-allowed disabled:opacity-60" 
         >
           <svg
             v-if="loading"

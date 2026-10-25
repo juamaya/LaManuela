@@ -31,7 +31,7 @@
           class="mt-6 max-w-lg text-base leading-7 text-[#765D4B] sm:text-lg sm:leading-8"
         >
           Un buen café por la mañana, algo rico para compartir y
-          momentos que merecen quedarse. Bienvenido a La Taza.
+          momentos que merecen quedarse. Bienvenido a <span class="text-[#A8754D] font-bold">La Manuela.</span>
         </p>
 
         <!-- Botones -->
