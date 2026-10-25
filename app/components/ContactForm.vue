@@ -37,11 +37,22 @@ async function handleSubmit() {
   loading.value = true
 
   try {
-    // Envía los datos a tu API de Nuxt.
-    await $fetch('/api/contact', {
-      method: 'POST',
-      body: form.value,
-    })
+    const response = await $fetch(
+      'https://formsubmit.co/ajax/19fcf70f277172b1f6e5cf44cfd77e9e',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: {
+          name: form.value.name,
+          email: form.value.email,
+          subject: form.value.subject,
+          message: form.value.message,
+        },
+      },
+    )
 
     success.value = true
 
@@ -51,13 +62,14 @@ async function handleSubmit() {
       subject: '',
       message: '',
     }
-  } catch {
-    error.value = 'No se pudo enviar el mensaje. Inténtalo de nuevo.'
+  } catch (e) {
+    console.error('Error al enviar el formulario:', e)
+    error.value =
+      'No se pudo enviar el mensaje. Comprueba la configuración e inténtalo de nuevo.'
   } finally {
     loading.value = false
   }
 }
-
  
  
 </script>
@@ -83,11 +95,13 @@ async function handleSubmit() {
       </div>
 
       <!-- Formulario -->
-      <form
-        class="space-y-6 rounded-2xl border border-stone-100
-               bg-white p-6 shadow-lg sm:p-10"
-        @submit.prevent="handleSubmit"
-      >
+    <form
+  action="https://formsubmit.co/marinamaya69@gmail.com"
+  method="POST"
+  class="space-y-6 rounded-2xl border border-stone-100
+         bg-white p-6 shadow-lg sm:p-10"
+  @submit.prevent="handleSubmit"
+>
         <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
           <!-- Nombre -->
           <div>
