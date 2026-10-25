@@ -151,7 +151,7 @@ const socialLinks = [
         class="mt-10 flex flex-col items-center justify-between gap-4 border-t border-white/15 pt-6 text-center sm:flex-row sm:text-left"
       >
         <p class="text-xs text-[#C9A98B]">
-          © {{ currentYear }} La Manuela Café-Bar. Todos los derechos reservados.
+         Juamaya © {{ currentYear }} La Manuela Café-Bar. Todos los derechos reservados.
         </p>
 
         
